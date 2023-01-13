@@ -19,7 +19,7 @@ $(document).ready(function() {
     }
 
     else if (correct_answer > 100 || correct_answer < 1){
-      $("p").html("Huh... What? Just write a number between 1-100")
+      $("p").html(`Huh... What? Just write a number between ${lower}-${upper}.`)
     }
 
     //! 5
@@ -60,14 +60,14 @@ $(document).ready(function() {
       upper = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">2</span>`);
       guess--;
-      $("p").html(`Hint: Guess Lower! It's Between 1-${correct_answer}.`);
+      $("p").html(`Hint: Guess Lower! It's Between ${lower}-${upper}.`);
     }
 
     else if(guess == 3 && random_number !== correct_answer && correct_answer < random_number) {
       lower = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">2</span>`);
       guess--;
-      $("p").html(`Hint: Guess Higher! It's Between ${correct_answer}-100.`);
+      $("p").html(`Hint: Guess Higher! It's Between ${lower}-${upper}.`);
     }
 
     //! 2
@@ -76,14 +76,14 @@ $(document).ready(function() {
       upper = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">1</span>`);
       guess--;
-      $("p").html(`Hint: Guess Lower! It's Between 1-${correct_answer}.`);
+      $("p").html(`Hint: Guess Lower! It's Between ${lower}-${upper}.`);
     }
 
     else if(guess == 2 && random_number !== correct_answer && correct_answer < random_number) {
       lower = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">1</span>`);
       guess--;
-      $("p").html(`Hint: Guess Higher! It's Between ${correct_answer}-100.`);
+      $("p").html(`Hint: Guess Higher! It's Between ${lower}-${upper}.`);
     }
 
     //! 1
