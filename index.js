@@ -1,10 +1,10 @@
 let random_number = Math.floor(Math.random() * 100) + 1; //random 100
 let guess = 5; //5 tahmin
 let correct_answer;
-var lower = 1;
-var upper = 100;
-var loseUrl = "./images/Lose.png"
-var wonUrl = "./images/Won.png"
+let lower = 1;
+let upper = 100;
+let loseUrl = "./images/Lose.png"
+let wonUrl = "./images/Won.png"
 
 $("#retry").click(function() {
   location.reload();
@@ -102,3 +102,4 @@ $(document).ready(function() {
     }
   });
 });
+
