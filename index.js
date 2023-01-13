@@ -1,6 +1,8 @@
 let random_number = Math.floor(Math.random() * 100) + 1; //random 100
 let guess = 5; //5 tahmin
 let correct_answer;
+var lower = 1;
+var upper = 100;
 var loseUrl = "./images/Lose.png"
 var wonUrl = "./images/Won.png"
 
@@ -15,6 +17,7 @@ $(document).ready(function() {
       $("button, h3, input").hide();
       $("p").html("ㅤ");
     }
+
     else if (correct_answer > 100 || correct_answer < 1){
       $("p").html("Huh... What? Just write a number between 1-100")
     }
@@ -22,13 +25,15 @@ $(document).ready(function() {
     //! 5
 
     else if (guess == 5 && random_number !== correct_answer && correct_answer > random_number) {
-      $("p").html("Hint: Guess Lower!");
+      upper = correct_answer;
+      $("p").html(`Hint: Guess Lower! It's Between ${lower}-${upper}.`);
       $("#text_change").html(`Guesses Left: <span id="number">4</span>`);
       guess--;
     }
 
     else if (guess == 5 && random_number !== correct_answer && correct_answer < random_number) {
-      $("p").html("Hint: Guess Higher!");
+      lower = correct_answer;
+      $("p").html(`Hint: Guess Higher! It's Between ${lower}-${upper}.`);
       $("#text_change").html(`Guesses Left: <span id="number">4</span>`);
       guess--;
     }
@@ -36,43 +41,49 @@ $(document).ready(function() {
     //! 4
 
     else if(guess == 4 && random_number !== correct_answer && correct_answer > random_number) {
+      upper = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">3</span>`);
       guess--;
-      $("p").html("Hint: Guess Lower!");
+      $("p").html(`Hint: Guess Lower! It's Between ${lower}-${upper}.`);
     }
 
     else if(guess == 4 && random_number !== correct_answer && correct_answer < random_number) {
+      lower = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">3</span>`);
       guess--;
-      $("p").html("Hint: Guess Higher!");
+      $("p").html(`Hint: Guess Higher! It's Between ${lower}-${upper}.`);
     }
 
     //! 3
 
     else if(guess == 3 && random_number !== correct_answer && correct_answer > random_number) {
+      upper = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">2</span>`);
       guess--;
-      $("p").html("Hint: Guess Lower!");
+      $("p").html(`Hint: Guess Lower! It's Between 1-${correct_answer}.`);
     }
 
     else if(guess == 3 && random_number !== correct_answer && correct_answer < random_number) {
+      lower = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">2</span>`);
       guess--;
-      $("p").html("Hint: Guess Higher!");
+      $("p").html(`Hint: Guess Higher! It's Between ${correct_answer}-100.`);
     }
 
     //! 2
 
     else if(guess == 2 && random_number !== correct_answer && correct_answer > random_number) {
+      upper = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">1</span>`);
       guess--;
-      $("p").html("Hint: Last Chance! Guess Lower!");
+      $("p").html(`Hint: Guess Lower! It's Between 1-${correct_answer}.`);
     }
 
     else if(guess == 2 && random_number !== correct_answer && correct_answer < random_number) {
+      lower = correct_answer;
       $("#text_change").html(`Guesses Left: <span id="number">1</span>`);
       guess--;
-      $("p").html("Hint: Last Chance! Guess Higher!");
+      $("p").html(`Hint: Guess Higher! It's Between ${correct_answer}-100.`);
     }
 
     //! 1
