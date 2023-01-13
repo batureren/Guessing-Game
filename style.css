@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(200deg, #6762fa 0%, #c0b5ff 100%);
+}
+
+.image-container{
+    background-image: url(./images/retro.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position:sticky;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+    animation: rotate 10s linear infinite;
+}
+
+body div h1, .bottom{
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.check, .guess_image, .bottom{
+    margin-top: 50px;
+}
+
+.space{
+    height: 10vh;
+}
+
+.guess_image{
+    background-image: url(./images/Guess.png);
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-top: 100px;
+}
+
+.check, .bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom{
+    font-size: larger;
+    flex-direction: column;
+}
+.check input{
+    border-style: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.check input::-webkit-outer-spin-button,
+.check input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.guess_image{
+    animation: scale 2s linear infinite;
+}
+
+#change{
+    padding: 6px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#change:hover{
+cursor: pointer;
+}
+
+span{
+    font-size: larger; 
+    color: red;
+    text-align: center;
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(1.0)
+    }
+    50%{
+        transform: scale(1.1)
+    }
+}
+
+p{
+    font-weight: 800;
+    font-size: 25px;
+    text-align: center;
+    color:red;
+    text-shadow: 0px 0px 1px black;
+}
