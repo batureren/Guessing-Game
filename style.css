@@ -78,13 +78,14 @@ body div h1, .bottom{
     animation: scale 2s linear infinite;
 }
 
-#change{
+#change, #retry{
+    margin-left: 5px;
     padding: 6px 20px;
     font-size: 20px;
     border-radius: 10px;
 }
 
-#change:hover{
+#change:hover, #retry:hover {
 cursor: pointer;
 }
 

@@ -6,6 +6,10 @@ var upper = 100;
 var loseUrl = "./images/Lose.png"
 var wonUrl = "./images/Won.png"
 
+$("#retry").click(function() {
+  location.reload();
+});
+
 $(document).ready(function() {
   $("#change").click(function() {
     $("#correct_answer").focus();
@@ -14,7 +18,7 @@ $(document).ready(function() {
       $("h1").html(`CONGRATS, YOUR GUESS WAS RIGHT!!!`)
       $(".guess_image").css("background-image", "url(" + wonUrl + ")");
       $("#text_change").html(`<span id="number"> YOU WON THE GAME!</span>`);
-      $("button, h3, input").hide();
+      $("#change, h3, input").hide();
       $("p").html("ㅤ");
     }
 
@@ -91,7 +95,7 @@ $(document).ready(function() {
     else if(guess == 1 && random_number !== correct_answer) {
       $(".guess_image").css("background-image", "url(" + loseUrl + ")");
       $("#text_change").html(`<span id="number"> YOU LOSE!</span>`);
-      $("button, h3, input").hide();
+      $("#change, h3, input").hide();
       $("p").html("ㅤ")
       $("h1").html(`BETTER LUCK NEXT TIME!`)
       guess--;
