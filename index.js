@@ -12,6 +12,16 @@ $("#retry").click(function() {
 
 $(document).ready(function() {
   $("#change").click(function() {
+    checkAnswer();
+  });
+
+  $("#correct_answer").keyup(function(event) {
+    if (event.keyCode === 13) {
+      checkAnswer();
+    }
+  });
+
+  function checkAnswer() {
     $("#correct_answer").focus();
     correct_answer = $("#correct_answer").val();
     if (correct_answer == random_number) {
@@ -21,7 +31,6 @@ $(document).ready(function() {
       $("#change, h3, input").hide();
       $("p").html("ㅤ");
     }
-
     else if (correct_answer > 100 || correct_answer < 1){
       $("p").html(`Huh... What? Just write a number between ${lower}-${upper}.`)
     }
@@ -100,6 +109,6 @@ $(document).ready(function() {
       $("h1").html(`BETTER LUCK NEXT TIME!`)
       guess--;
     }
-  });
+  };
 });
 
